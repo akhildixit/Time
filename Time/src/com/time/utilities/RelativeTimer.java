@@ -12,17 +12,10 @@ import java.util.Date;
 public class RelativeTimer {
 
 	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println(new RelativeTimer().compareToNow("31-03-1991 13:50:40", "dd-MM-yyyy HH:mm:ss"));
-	}
-
-	/**
 	 * @param dateString
 	 * @param format
-	 * @return Relative time from/till now. Returns null in case of any exception.
+	 * @return Relative time from/till now. Returns null in case of any
+	 *         exception.
 	 */
 	public String compareToNow(String dateString, String format) {
 		DateFormat myDateFormat = new SimpleDateFormat(format);
@@ -38,9 +31,9 @@ public class RelativeTimer {
 		long first = firstDate.getTime();
 		long last = lastDate.getTime();
 		if (first > last) {
-			return "In "+findDifference(last, first);
+			return "In " + findDifference(last, first);
 		}
-		return findDifference(first, last)+" ago";
+		return findDifference(first, last) + " ago";
 	}
 
 	/**
